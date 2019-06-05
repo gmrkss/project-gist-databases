@@ -30,9 +30,7 @@ def _test_gist_from_json(db_connection, gist_data):
 
 
 @responses.activate
-def test_importer_imports_data_correctly(
-    gists_database, mocked_requests):
-
+def test_importer_imports_data_correctly(gists_database, mocked_requests):
     import_gists_to_database(gists_database, 'gvanrossum')
 
     query = 'SELECT COUNT(*) FROM gists;'
